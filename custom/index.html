@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GPT Lazy Load Demo - Custom</title>
+
+  <script src="https://www.googletagservices.com/tag/js/gpt.js" async></script>
+
+
+  <script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.slots = googletag.slots || {};
+
+    googletag.cmd.push(function(){
+        googletag.pubads().enableAsyncRendering();
+        googletag.pubads().collapseEmptyDivs(true);
+        googletag.pubads().setCentering(true);
+        googletag.pubads().setTargeting("advert-preview","alladslots");
+        googletag.pubads().disableInitialLoad();
+        googletag.enableServices();
+    });
+
+    googletag.cmd.push(function(){
+        var mapping = googletag.sizeMapping()
+          .addSize([980,0],[[970, 250],[728,90]])
+          .build();
+        googletag.slots.slot_1 = googletag.defineSlot("/359/test-zone",[[300,250],[300,600]],"dfp-slot-1")
+            .addService(googletag.pubads())
+            .defineSizeMapping(mapping);
+    });
+
+    googletag.cmd.push(function(){
+        var mapping = googletag.sizeMapping()
+          .addSize([980,0],[[970, 250],[728,90]])
+          .build();
+        googletag.slots.slot_2 = googletag.defineSlot("/359/test-zone",[[300,250],[300,600]],"dfp-slot-2")
+            .addService(googletag.pubads())
+            .defineSizeMapping(mapping);
+    });
+
+    googletag.cmd.push(function(){
+        var mapping = googletag.sizeMapping()
+          .addSize([980,0],[[970, 250],[728,90]])
+          .build();
+        googletag.slots.slot_3 = googletag.defineSlot("/359/test-zone",[[300,250],[300,600]],"dfp-slot-3")
+            .addService(googletag.pubads())
+            .defineSizeMapping(mapping);
+    });
+
+    googletag.cmd.push(function(){
+        var mapping = googletag.sizeMapping()
+          .addSize([980,0],[[970, 250],[728,90]])
+          .build();
+        googletag.slots.slot_4 = googletag.defineSlot("/359/test-zone",[[300,250],[300,600]],"dfp-slot-4")
+            .addService(googletag.pubads())
+            .defineSizeMapping(mapping);
+    });
+  </script>
+
+  <style>
+      .dfp-container {
+          height: 300vh;
+      }
+      .dfp-slot {
+
+      }
+  </style>
+</head>
+
+<body>
+    <h1>GPT Lazy Load Demo - Custom</h1>
+
+    <div id="content">
+
+        <div class="dfp-container">
+            <div id="dfp-slot-1">
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display("dfp-slot-1");
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="dfp-container">
+            <div id="dfp-slot-2">
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display("dfp-slot-2");
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="dfp-container">
+            <div id="dfp-slot-3">
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display("dfp-slot-3");
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="dfp-container">
+            <div id="dfp-slot-4">
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display("dfp-slot-4");
+                    });
+                </script>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./dist/gpt-lazyload.bundle.js"></script>
+</body>
+</html>
